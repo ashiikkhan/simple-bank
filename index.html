@@ -9,36 +9,40 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+    <!-- header -->
     <header>
       <h1 class="text-4xl font-semibold text-center text-slate-600 mt-6">
         Welcome to <span class="font-bold text-sky-600">Simple Bank !!</span>
       </h1>
     </header>
-    <div class="bg-emerald-100 w-9/12 mx-auto mt-12 p-8">
-      <h2 class="text-3xl font-medium mb-4 text-sky-600">Please Login</h2>
-      <div>
-        <input
-          class="w-9/12 block mb-3 px-3 py-1 text-slate-600 text-base placeholder:text-base border border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
-          type="email"
-          name="email"
-          id="email-field"
-          placeholder="Type myemail@bank.com"
-        />
-        <input
-          class="w-9/12 block mb-3 px-3 py-1 text-slate-600 text-base placeholder:text-base border border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
-          type="password"
-          name="password"
-          id="password-field"
-          placeholder="Type mypassword"
-        />
-        <button
-          class="bg-amber-500 hover:bg-sky-600 px-6 py-2 rounded-lg text-white font-medium"
-          id="submit-btn"
-        >
-          Submit
-        </button>
+    <!-- login section -->
+    <section>
+      <div class="bg-emerald-100 w-9/12 mx-auto mt-12 p-8">
+        <h2 class="text-3xl font-medium mb-4 text-sky-600">Please Login</h2>
+        <div>
+          <input
+            class="w-9/12 block mb-3 px-3 py-1 text-slate-600 text-base placeholder:text-base border border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+            type="email"
+            name="email"
+            id="email-field"
+            placeholder="Type myemail@bank.com"
+          />
+          <input
+            class="w-9/12 block mb-3 px-3 py-1 text-slate-600 text-base placeholder:text-base border border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+            type="password"
+            name="password"
+            id="password-field"
+            placeholder="Type mypassword"
+          />
+          <button
+            class="bg-amber-500 hover:bg-sky-600 px-6 py-2 rounded-lg text-white font-medium"
+            id="submit-btn"
+          >
+            Submit
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
     <!-- script -->
     <script src="js/login.js"></script>
   </body>

@@ -3,7 +3,7 @@ submitBtn.addEventListener('click', function () {
   const email = document.getElementById('email-field').value;
   const password = document.getElementById('password-field').value;
   if (email === 'myemail@bank.com' && password === 'mypassword') {
-    console.log('valid user');
+    window.location.href = 'bank.html';
   } else {
     alert('Write given email and password in placeholder!');
   }
