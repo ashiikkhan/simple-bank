@@ -1,24 +1,25 @@
 const withdrawBtn = document.getElementById('withdraw-btn');
 withdrawBtn.addEventListener('click', function () {
-  //get input amount:
+  //withdraw input amount
   const wIA = getInputAmount('withdraw-field');
 
-  //set new input to total:
+  //previous total withdraw amount
   const pTWA = getPreviousAmount('withdraw-total');
 
-  // get previous balance total:
+  //previous total balance
   const pTB = getPreviousAmount('balance-total');
 
-  //total withdraw and balance calculation:
-  if (wIA < pTB) {
-    const tWA = pTWA + wIA;
-    //display withdraw:
-    displayAmount('withdraw-total', tWA);
-    // new total :
-    const nTB = pTB - wIA;
-    // display total:
-    displayAmount('balance-total', nTB);
+  //total withdraw amount and total balance calculation
+  if (isNaN(wIA) || wIA < 0) {
+    alert('Please Giva a Valid Number');
+  } else if (wIA > pTB) {
+    alert("You don't have sufficient balance to withdraw.");
   } else {
-    alert("you don't have sufficient balance to withdraw");
+    //display total withdraw amount
+    const tWA = pTWA + wIA;
+    displayAmount('withdraw-total', tWA);
+    // display total balance
+    const nTB = pTB - wIA;
+    displayAmount('balance-total', nTB);
   }
 });
