@@ -1,28 +1,24 @@
 const depositBtn = document.getElementById('deposit-btn');
 depositBtn.addEventListener('click', function () {
-  //get input amount:
-  const inputField = document.getElementById('deposit-field');
-  const nDA = parseFloat(inputField.value);
+  //deposit input amount
+  const dIA = getInputAmount('deposit-field');
 
-  //set new input to total:
-  const totalField = document.getElementById('deposit-total');
-  const pTDA = parseFloat(totalField.innerText);
-  // get previous balance total:
-  const balanceField = document.getElementById('balance-total');
-  const pBT = parseFloat(balanceField.innerText);
-  //total deposit and balance calculation:
-  if (typeof nDA === 'number' && nDA > 0) {
-    const tDA = nDA + pTDA;
-    //display deposit:
-    totalField.innerText = tDA;
-    // new total :
-    const nBT = pBT + nDA;
-    // display total:
-    balanceField.innerText = nBT;
+  //previous total deposit amount
+  const pTDA = getPreviousAmount('deposit-total');
+
+  // previous total balance
+  const pTB = getPreviousAmount('balance-total');
+
+  //total deposit amount and total balance calculation:
+  if (isNaN(dIA) || dIA < 0) {
+    alert('Please Give a Valid Amount');
   } else {
-    alert('please give a valid amount');
-  }
+    // total deposit desiplay
+    const tDA = dIA + pTDA;
+    displayAmount('deposit-total', tDA);
 
-  //clear input field:
-  inputField.value = '';
+    // total balance display
+    const nTB = pTB + dIA;
+    displayAmount('balance-total', nTB);
+  }
 });
